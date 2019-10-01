@@ -10,15 +10,6 @@ import Cocoa
 
 class DetailViewController: NSViewController {
 
-	init?(coder: NSCoder, managedObjectContext: NSManagedObjectContext) {
-		self.managedObjectContext = managedObjectContext
-		super.init(coder: coder)
-	}
-
-	required init?(coder: NSCoder) {
-		fatalError()
-	}
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -26,6 +17,5 @@ class DetailViewController: NSViewController {
 
 	// MARK: - Properties
 
-	dynamic private var managedObjectContext: NSManagedObjectContext
-    
+    @objc dynamic var entriesController: NSArrayController?
 }

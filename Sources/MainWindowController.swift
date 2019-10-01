@@ -13,11 +13,8 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        let splitVC = contentViewController as! SplitViewController
+		let moc = (NSApp.delegate as! AppDelegate).persistentContainer.viewContext
+		splitVC.managedObjectContext = moc
     }
-
-	@IBSegueAction func makeSplitViewController(_ coder: NSCoder) -> SplitViewController? {
-
-		return SplitViewController(coder: coder, managedObjectContext: moc)
-	}
 }

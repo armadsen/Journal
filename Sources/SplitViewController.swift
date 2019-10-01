@@ -11,31 +11,26 @@ import CoreData
 
 class SplitViewController: NSSplitViewController {
 
-	init?(coder: NSCoder, managedObjectContext: NSManagedObjectContext) {
-		self.managedObjectContext = managedObjectContext
-		super.init(coder: coder)
-	}
-
-	required init?(coder: NSCoder) {
-		managedObjectContext = NSManagedObjectContext()
-		super.init(coder: coder)
-	}
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+
+		handArrayControllerToChidren()
     }
 
-	@IBSegueAction
-	func makeSourceListViewController(coder: NSCoder) -> SourceListViewController? {
-		SourceListViewController(coder: coder, managedObjectContext: managedObjectContext)
+	private func handArrayControllerToChidren() {
+		for vc in children {
+			if let sourceListVC = vc as? SourceListViewController {
+				sourceListVC.entriesController = entriesController
+			}
+
+			if let detailVC = vc as? DetailViewController {
+				detailVC.entriesController = entriesController
+			}
+		}
 	}
 
-	@IBSegueAction
-	func makeDetailViewController(coder: NSCoder) -> DetailViewController? {
-		DetailViewController(coder: coder, managedObjectContext: managedObjectContext)
-	}
+	// MARK: - Properties
 
-	private var managedObjectContext: NSManagedObjectContext
-    
+	@objc dynamic var managedObjectContext: NSManagedObjectContext!
+	@IBOutlet var entriesController: NSArrayController!
 }

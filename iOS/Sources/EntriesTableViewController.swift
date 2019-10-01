@@ -42,7 +42,6 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
 		tableView.reloadData()
 	}
 
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -55,10 +54,9 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
 		}
     }
 
-
 	// MARK: - Properties
 
-	let managedObjectContext = (UIApplication.shared.delegate! as! AppDelegate).persistentContainer.viewContext
+	let managedObjectContext = Database.shared.mainContext
 
 	lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
 		let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()

@@ -14,7 +14,6 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
 
         let splitVC = contentViewController as! SplitViewController
-		let moc = (NSApp.delegate as! AppDelegate).persistentContainer.viewContext
-		splitVC.managedObjectContext = moc
+		splitVC.managedObjectContext = Database.shared.mainContext
     }
 }

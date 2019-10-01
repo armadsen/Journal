@@ -28,6 +28,8 @@
 		9D5320A6234414BF00131AD4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5320A5234414BF00131AD4 /* DetailViewController.swift */; };
 		9D5320A8234415FA00131AD4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5320A7234415FA00131AD4 /* Database.swift */; };
 		9D5320A9234415FA00131AD4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5320A7234415FA00131AD4 /* Database.swift */; };
+		9D5320AD2344189100131AD4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5320AC2344189100131AD4 /* CloudKit.framework */; };
+		9D5320AF234418D200131AD4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5320AE234418D200131AD4 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		9D5320A32343FF1600131AD4 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		9D5320A5234414BF00131AD4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9D5320A7234415FA00131AD4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9D5320AA2344188E00131AD4 /* Journal-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Journal-iOS.entitlements"; sourceTree = "<group>"; };
+		9D5320AC2344189100131AD4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		9D5320AE234418D200131AD4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5320AF234418D200131AD4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5320AD2344189100131AD4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +84,12 @@
 		9D5320442343BF1F00131AD4 = {
 			isa = PBXGroup;
 			children = (
+				9D5320AA2344188E00131AD4 /* Journal-iOS.entitlements */,
 				9D53207F2343FDC500131AD4 /* iOS */,
 				9D53207B2343FD7000131AD4 /* Mac */,
 				9D53207D2343FD8900131AD4 /* Shared */,
 				9D53204E2343BF1F00131AD4 /* Products */,
+				9D5320AB2344189100131AD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +190,15 @@
 				9D5320A5234414BF00131AD4 /* DetailViewController.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		9D5320AB2344189100131AD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D5320AE234418D200131AD4 /* CloudKit.framework */,
+				9D5320AC2344189100131AD4 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Journal-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
 				INFOPLIST_FILE = iOS/Resources/Info.plist;
@@ -517,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Journal-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
 				INFOPLIST_FILE = iOS/Resources/Info.plist;

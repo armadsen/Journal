@@ -38,7 +38,7 @@ class EntriesTableViewController: UITableViewController, NSFetchedResultsControl
 
 	// MARK: - NSFetchedResultsControllerDelegate
 
-	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 		tableView.reloadData()
 	}
 

@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+private let cloudKitContainerIdentifier = "iCloud.com.openreelsoftware.Journal"
+
 class Database {
 	static let shared = Database()
 
@@ -35,6 +37,9 @@ class Database {
 		error conditions that could cause the creation of the store to fail.
 		*/
 		let container = NSPersistentCloudKitContainer(name: "Journal")
+		if let desc = container.persistentStoreDescriptions.first {
+			desc.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: cloudKitContainerIdentifier)
+		}
 		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
 			if let error = error {
 				// Replace this implementation with code to handle the error appropriately.
